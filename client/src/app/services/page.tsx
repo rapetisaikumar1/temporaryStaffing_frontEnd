@@ -82,7 +82,7 @@ export default function ServicesPage() {
       {/* Page Header */}
       <section className="relative bg-[#0d2b5e] text-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-20" />
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-40" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                       alt={svc.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-[#0b1f41]/50" />
+                    <div className="absolute inset-0 bg-[#0b1f41]/30" />
                     <div className="absolute bottom-4 left-4 flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
                         <Icon className="h-5 w-5 text-white" />

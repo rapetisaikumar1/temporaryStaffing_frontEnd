@@ -24,7 +24,7 @@ const industries = [
     roles: ['Brand Ambassadors', 'Booth Demonstrators', 'Lead Gen Representatives', 'Booth Setup & Teardown Crew', 'Registration Staff', 'Floor Hosts'],
     scale: 'Typical crew: 2 – 50 staff per booth',
     note: 'Experienced with CES, SXSW, NAB, and major industry expos',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1560439514-4e9645039924?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Brand Activations & PR Tours',
@@ -32,7 +32,7 @@ const industries = [
     roles: ['Street Team Members', 'Sampling & Promo Agents', 'Mobile Tour Staff', 'Experiential Brand Hosts', 'Influencer Event Assistants', 'Market Research Surveyors'],
     scale: 'Typical crew: 2 – 30 staff',
     note: 'Single-city and multi-city tour options',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Sporting Events & Stadiums',
@@ -81,7 +81,7 @@ export default function IndustriesPage() {
       {/* Page Header */}
       <section className="relative bg-[#0d2b5e] text-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-25" />
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-45" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
@@ -121,7 +121,7 @@ export default function IndustriesPage() {
                     alt={ind.title} 
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f41]/50 to-[#0b1f41]/30"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f41]/25 to-[#0b1f41]/10"></div>
                 </div>
                 
                 {/* Content */}
