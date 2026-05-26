@@ -8,6 +8,7 @@ const industries = [
     roles: ['Registration & Badge Scanning', 'Concierge & Wayfinding Hosts', 'Green Room Assistants', 'AV Runner Support', 'Greeter Teams', 'VIP Check-in Coordinators'],
     scale: 'Typical crew: 5 – 200 staff',
     note: 'Available for single-day and multi-day conferences',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Music Festivals & Concerts',
@@ -15,6 +16,7 @@ const industries = [
     roles: ['Ticket Scanners & Gate Crew', 'VIP Section Hosts', 'Wristbanding Staff', 'General Crowd Management', 'Concession Stand Operators', 'Merchandise Sellers'],
     scale: 'Typical crew: 20 – 500+ staff',
     note: 'Experienced with multi-stage festivals and arena concerts',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Trade Shows & Exhibitions',
@@ -22,6 +24,7 @@ const industries = [
     roles: ['Brand Ambassadors', 'Booth Demonstrators', 'Lead Gen Representatives', 'Booth Setup & Teardown Crew', 'Registration Staff', 'Floor Hosts'],
     scale: 'Typical crew: 2 – 50 staff per booth',
     note: 'Experienced with CES, SXSW, NAB, and major industry expos',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Brand Activations & PR Tours',
@@ -29,6 +32,7 @@ const industries = [
     roles: ['Street Team Members', 'Sampling & Promo Agents', 'Mobile Tour Staff', 'Experiential Brand Hosts', 'Influencer Event Assistants', 'Market Research Surveyors'],
     scale: 'Typical crew: 2 – 30 staff',
     note: 'Single-city and multi-city tour options',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Sporting Events & Stadiums',
@@ -36,6 +40,7 @@ const industries = [
     roles: ['Concession Stand Operators', 'Premium Suite Servers', 'Usher & Fan Services Staff', 'Parking & Traffic Coordinators', 'Merchandise Sellers', 'Scoreboard & Ops Assistants'],
     scale: 'Typical crew: 25 – 300+ staff',
     note: 'Experienced with NFL, NBA, MLS, and NCAA venue standards',
+    image: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'VIP & Gala Events',
@@ -43,6 +48,7 @@ const industries = [
     roles: ['Formal Dinner Servers', 'Coat Check Attendants', 'Valet Coordinators', 'Sommelier Assistants', 'VIP Check-in Hosts', 'Silent Auction Managers'],
     scale: 'Typical crew: 5 – 100 staff',
     note: 'Black-tie attire and NDA compliance available',
+    image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Weddings & Private Receptions',
@@ -50,6 +56,7 @@ const industries = [
     roles: ['Wedding Servers', 'Bartenders & Bar Staff', 'Setup & Breakdown Crew', "Passed Hors d'Oeuvres Servers", 'Day-of Coordinators', 'Venue Prep Assistants'],
     scale: 'Typical crew: 2 – 40 staff',
     note: 'Weekend and holiday availability',
+    image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1600&auto=format&fit=crop',
   },
   {
     title: 'Charity Events & Fundraisers',
@@ -57,6 +64,7 @@ const industries = [
     roles: ['Gala Dinner Servers', 'Silent Auction & Bidding Staff', 'Donor Registration Hosts', 'Valet Parking Staff', 'Paddle Raise Coordinators', 'Post-Event Teardown Crew'],
     scale: 'Typical crew: 5 – 80 staff',
     note: 'Formal or smart-casual dress codes accommodated',
+    image: 'https://images.unsplash.com/photo-1519167758481-83f19106d718?q=80&w=1600&auto=format&fit=crop',
   },
 ];
 
@@ -105,21 +113,36 @@ export default function IndustriesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {industries.map((ind) => (
-              <div key={ind.title} className="border border-gray-200 rounded-lg p-8 hover:border-[#0d2b5e] hover:shadow-md transition-all flex flex-col">
-                <h3 className="text-xl font-bold text-[#0d2b5e] mb-3">{ind.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-5">{ind.desc}</p>
-                <div className="grid grid-cols-2 gap-2 mb-5">
-                  {ind.roles.map((role) => (
-                    <span key={role} className="flex items-center gap-2 text-xs text-gray-700 font-medium">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#0033a0] shrink-0"></span>
-                      {role}
-                    </span>
-                  ))}
+              <div key={ind.title} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all flex flex-col bg-white">
+                {/* Photo Header */}
+                <div className="relative h-52 overflow-hidden bg-gray-200">
+                  <img 
+                    src={ind.image} 
+                    alt={ind.title} 
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b1f41]/50 to-[#0b1f41]/30"></div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-gray-100">
-                  <span className="text-xs font-semibold text-gray-400">{ind.scale}</span>
-                  <span className="hidden sm:block text-gray-200">|</span>
-                  <span className="text-xs text-gray-400 italic">{ind.note}</span>
+                
+                {/* Content */}
+                <div className="p-7 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-[#0d2b5e] mb-3">{ind.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-5">{ind.desc}</p>
+                  
+                  <div className="grid grid-cols-2 gap-2 mb-5">
+                    {ind.roles.map((role) => (
+                      <span key={role} className="flex items-center gap-2 text-xs text-gray-700 font-medium">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#0033a0] shrink-0"></span>
+                        {role}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4 border-t border-gray-100">
+                    <span className="text-xs font-semibold text-gray-400">{ind.scale}</span>
+                    <span className="hidden sm:block text-gray-200">|</span>
+                    <span className="text-xs text-gray-400 italic">{ind.note}</span>
+                  </div>
                 </div>
               </div>
             ))}
