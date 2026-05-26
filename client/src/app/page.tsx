@@ -1,211 +1,162 @@
 import Link from 'next/link';
-import { ChevronRight, Shield, Clock, Users, BarChart3, Award, ArrowRight } from 'lucide-react';
+import { Search, MapPin, ChevronRight, Briefcase, Users, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const specialties = [
-  { label: 'Event Hosts & Registration Staff', href: '/services' },
-  { label: 'Brand Ambassadors & Promotions', href: '/services' },
-  { label: 'Hospitality & Catering', href: '/services' },
-  { label: 'Trade Show & Exhibition Staff', href: '/services' },
-  { label: 'Production Crew & Logistics', href: '/services' },
-  { label: 'Administrative & Office Support', href: '/services' },
-  { label: 'Warehouse & Light Industrial', href: '/services' },
-  { label: 'Security & Crowd Management', href: '/services' },
-];
-
-const stats = [
-  { number: '50,000+', label: 'Professionals Placed' },
-  { number: '10,000+', label: 'Events Staffed' },
-  { number: '48', label: 'States Covered' },
-  { number: '99%', label: 'Client Fill Rate' },
-];
-
-const steps = [
-  { num: '01', title: 'Tell us your needs', desc: 'Submit your staffing request with event details, dates, headcount, and required skills. Takes under 5 minutes.' },
-  { num: '02', title: 'We match & screen', desc: 'Our team handpicks candidates from our pre-vetted talent pool. Every professional passes background checks and skills assessments.' },
-  { num: '03', title: 'Staff shows up ready', desc: 'Your team is briefed, badged, and on-site on time. We handle all HR, payroll, and compliance.' },
+  'Administrative & Customer Service',
+  'Finance & Accounting',
+  'Technology',
+  'Marketing & Creative',
+  'Legal',
+  'Human Resources',
+  'Manufacturing & Logistics',
+  'Healthcare'
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
-
-      {/* ── Hero Split ── */}
-      <section className="w-full grid md:grid-cols-2 min-h-[540px]">
-        {/* Left – Employers */}
-        <div className="bg-[#0d2b5e] text-white flex flex-col justify-center px-8 py-16 md:px-16 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-4">For Employers</p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-5">
-            Hire pre-vetted staff for any event or project.
-          </h1>
-          <p className="text-blue-100 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-            StaffPro connects you with experienced, background-checked professionals — deployed in as little as 24 hours nationwide.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/request-staff"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#0d2b5e] font-semibold px-6 py-3 rounded hover:bg-blue-50 transition-colors text-sm"
-            >
-              Request Staff <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-2 border border-blue-300 text-white font-medium px-6 py-3 rounded hover:bg-white/10 transition-colors text-sm"
-            >
-              View Staffing Solutions
-            </Link>
-          </div>
+    <div className="flex flex-col w-full font-sans">
+      {/* Generic Staffing Hero with Search Card */}
+      <section className="relative w-full py-16 md:py-28 lg:py-40 bg-gray-900">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" 
+            alt="Professionals in office" 
+            className="w-full h-full object-cover opacity-50"
+          />
         </div>
-
-        {/* Right – Job Seekers */}
-        <div className="bg-gray-50 flex flex-col justify-center px-8 py-16 md:px-16 md:py-20 border-l border-gray-100">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#0d2b5e] mb-4">For Job Seekers</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-[#0d2b5e] mb-5">
-            Find flexible work that fits your life.
-          </h2>
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-            Thousands of temporary, part-time, and full-time opportunities across hospitality, events, logistics, and more.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/join-team"
-              className="inline-flex items-center justify-center gap-2 bg-[#0d2b5e] text-white font-semibold px-6 py-3 rounded hover:bg-[#1a3f7a] transition-colors text-sm"
-            >
-              Apply Now <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 font-medium px-6 py-3 rounded hover:bg-gray-100 transition-colors text-sm"
-            >
-              How It Works
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Stats Bar ── */}
-      <section className="w-full bg-white border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-200">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center px-4">
-                <div className="text-3xl md:text-4xl font-bold text-[#0d2b5e]">{s.number}</div>
-                <div className="text-sm text-gray-500 mt-1 font-medium">{s.label}</div>
+        
+        <div className="container relative z-10 mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl bg-white p-8 md:p-12 rounded shadow-2xl mx-auto md:mx-0 text-left">
+            <h1 className="text-3xl md:text-5xl font-extrabold text-[#0033a0] mb-4 tracking-tight">Let's find your next great opportunity.</h1>
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl">Search thousands of open positions or connect with a recruiter to advance your career.</p>
+            
+            <div className="flex flex-col md:flex-row gap-4 mb-8">
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-3.5 h-6 w-6 text-gray-400" />
+                <Input type="text" placeholder="Job title, keywords, or company" className="pl-12 h-14 text-lg rounded-sm border-gray-300" />
               </div>
-            ))}
+              <div className="relative flex-1">
+                <MapPin className="absolute left-4 top-3.5 h-6 w-6 text-gray-400" />
+                <Input type="text" placeholder="City, state, or zip code" className="pl-12 h-14 text-lg rounded-sm border-gray-300" />
+              </div>
+              <Button size="lg" className="h-14 px-10 bg-[#0033a0] hover:bg-[#002277] text-white text-lg font-bold rounded-sm w-full md:w-auto">
+                Search Jobs
+              </Button>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-base font-semibold border-t border-gray-200 pt-6">
+              <span className="text-gray-600">Are you an employer looking to hire?</span>
+              <Link href="/request-staff" className="text-[#0033a0] hover:underline flex items-center">
+                Request talent today <ArrowRight className="ml-1.5 h-5 w-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Staffing Specialties (Randstad-style list) ── */}
-      <section className="w-full bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d2b5e] mb-2">Browse by staffing specialty</h2>
-            <p className="text-gray-500 text-base">We place professionals across every event type and industry sector.</p>
+      {/* Trust Bar / Stats - Standard Corporate Practice */}
+      <section className="bg-gray-100 border-b border-gray-200 py-10">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-24 text-center">
+          <div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">10,000+</div>
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">Placements this year</div>
           </div>
-          <div className="grid md:grid-cols-2 gap-0 border-t border-gray-200">
+          <div className="hidden md:block w-px h-16 bg-gray-300"></div>
+          <div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">48</div>
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">States Covered</div>
+          </div>
+          <div className="hidden md:block w-px h-16 bg-gray-300"></div>
+          <div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">2.5m+</div>
+            <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">Candidates in network</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Specialties Section - Standard Clean Grid */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries we serve</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Our specialized recruiters connect you with the right talent or opportunity across key sectors.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
             {specialties.map((spec) => (
-              <Link
-                key={spec.label}
-                href={spec.href}
-                className="flex items-center justify-between py-4 px-2 border-b border-gray-200 hover:bg-gray-50 group transition-colors"
-              >
-                <span className="text-[#0d2b5e] font-medium text-sm md:text-base">{spec.label}</span>
-                <ChevronRight className="h-4 w-4 text-gray-400 group-hover:text-[#0d2b5e] group-hover:translate-x-0.5 transition-all" />
-              </Link>
+               <Link key={spec} href="/industries" className="flex items-center justify-between p-6 bg-white border border-gray-200 rounded-sm hover:border-[#0033a0] hover:shadow-lg transition-all group cursor-pointer">
+                 <span className="font-bold text-gray-800 text-lg group-hover:text-[#0033a0] leading-tight">{spec}</span>
+                 <ChevronRight className="h-6 w-6 text-gray-400 group-hover:text-[#0033a0] shrink-0" />
+               </Link>
             ))}
           </div>
-          <div className="mt-6">
-            <Link href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
-              View all staffing categories <ArrowRight className="h-4 w-4" />
+          <div className="text-center mt-12">
+            <Link href="/industries" className="inline-flex items-center text-[#0033a0] font-bold hover:underline text-lg">
+              View all specialties <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── Why StaffPro ── */}
-      <section className="w-full bg-gray-50 border-y border-gray-200 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d2b5e] mb-3">Why companies choose StaffPro</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">We don't just fill positions — we deliver professionals who show up prepared, on time, and ready to represent your brand.</p>
+      {/* Dual Path - The most generic staffing pattern */}
+      <section className="w-full text-center">
+        <div className="grid md:grid-cols-2">
+          {/* Employers */}
+          <div className="bg-[#0b1f41] text-white px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center">
+            <Briefcase className="h-16 w-16 text-blue-300 mb-8" />
+            <h2 className="text-4xl font-bold mb-6">I am looking to hire</h2>
+            <p className="text-blue-100 text-xl mb-10 max-w-md mx-auto">Find highly skilled professionals for temporary, project-based, or permanent roles.</p>
+            <Link href="/request-staff" className="bg-white text-[#0b1f41] font-bold text-lg px-10 py-4 rounded-sm hover:bg-gray-100 transition-colors inline-block w-full sm:w-auto">
+              Request Talent
+            </Link>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Shield, title: 'Rigorous Screening', desc: 'Every candidate completes background checks, reference checks, and in-person skills assessments before joining our network.' },
-              { icon: Clock, title: '24-Hour Deployment', desc: 'Need staff fast? Our extensive talent pool means we can place verified professionals in under 24 hours.' },
-              { icon: Users, title: 'W-2 Employees', desc: 'All staff are our direct W-2 employees — fully insured, covered, and compliant. Zero legal risk for you.' },
-              { icon: Award, title: 'Dedicated Managers', desc: 'Every engagement includes a dedicated account manager as your single point of contact, start to finish.' },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-white border border-gray-200 rounded-lg p-6">
-                <div className="h-10 w-10 rounded bg-[#0d2b5e]/8 flex items-center justify-center mb-4">
-                  <Icon className="h-5 w-5 text-[#0d2b5e]" />
-                </div>
-                <h3 className="font-semibold text-[#0d2b5e] mb-2">{title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+          {/* Job Seekers */}
+          <div className="bg-[#f0f4f8] text-[#0b1f41] px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center">
+            <Users className="h-16 w-16 text-[#0033a0] mb-8" />
+            <h2 className="text-4xl font-bold mb-6">I am looking for a job</h2>
+            <p className="text-gray-600 text-xl mb-10 max-w-md mx-auto">Browse open jobs, submit your resume, and get matched with top employers.</p>
+            <Link href="/join-team" className="bg-[#0033a0] text-white font-bold text-lg px-10 py-4 rounded-sm hover:bg-[#002277] transition-colors inline-block w-full sm:w-auto">
+              Search Jobs
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Standard layout */}
+      <section className="py-24 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dedicated to your success</h2>
+            <p className="text-xl text-gray-600">Why thousands of businesses and professionals rely on StaffPro.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12 text-center">
+            <div className="flex flex-col items-center">
+              <div className="h-20 w-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
+                <Search className="h-10 w-10 text-[#0033a0]" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── How It Works ── */}
-      <section className="w-full bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d2b5e] mb-3">How it works</h2>
-            <p className="text-gray-500 max-w-xl">From request to deployment in three straightforward steps.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step) => (
-              <div key={step.num} className="relative">
-                <div className="text-5xl font-black text-gray-100 leading-none mb-4 select-none">{step.num}</div>
-                <h3 className="text-lg font-bold text-[#0d2b5e] mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Extensive Network</h3>
+              <p className="text-gray-600 text-lg">Access to a pre-vetted database of millions of active job seekers across all major industries.</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="h-20 w-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
+                <CheckCircle2 className="h-10 w-10 text-[#0033a0]" />
               </div>
-            ))}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Verified Quality</h3>
+              <p className="text-gray-600 text-lg">Every candidate goes through rigorous background checks, skills testing, and interviews.</p>
+            </div>
+            
+            <div className="flex flex-col items-center">
+              <div className="h-20 w-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
+                <FileText className="h-10 w-10 text-[#0033a0]" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Full Compliance</h3>
+              <p className="text-gray-600 text-lg">We handle payroll, taxes, insurance, and HR compliance so you can focus on your business.</p>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── Industries Served ── */}
-      <section className="w-full bg-gray-50 border-y border-gray-200 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0d2b5e] mb-3">Industries & event types we serve</h2>
-            <p className="text-gray-500">Wherever your event is, whatever role you need — we have the talent.</p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {['Corporate Conferences', 'Trade Shows', 'Festivals & Concerts', 'VIP & Galas', 'Brand Activations', 'Private Events'].map((ind) => (
-              <Link key={ind} href="/industries"
-                className="flex items-center justify-center text-center text-xs font-medium text-[#0d2b5e] bg-white border border-gray-200 rounded-lg px-3 py-4 hover:border-[#0d2b5e] hover:shadow-sm transition-all leading-snug"
-              >
-                {ind}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Dual CTA ── */}
-      <section className="w-full grid md:grid-cols-2">
-        {/* Employer */}
-        <div className="bg-[#0d2b5e] text-white px-8 py-14 md:px-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">Employers</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Need staff for your next event?</h2>
-          <p className="text-blue-100 mb-6 text-sm leading-relaxed max-w-sm">Tell us your requirements and we'll have pre-screened candidates ready within 24 hours.</p>
-          <Link href="/request-staff" className="inline-flex items-center gap-2 bg-white text-[#0d2b5e] font-semibold px-5 py-2.5 rounded hover:bg-blue-50 transition-colors text-sm">
-            Submit a Staffing Request <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        {/* Job Seeker */}
-        <div className="bg-[#1a3f7a] text-white px-8 py-14 md:px-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">Job Seekers</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to start earning?</h2>
-          <p className="text-blue-100 mb-6 text-sm leading-relaxed max-w-sm">Join thousands of professionals who rely on StaffPro for consistent, flexible work opportunities.</p>
-          <Link href="/join-team" className="inline-flex items-center gap-2 border border-blue-300 text-white font-semibold px-5 py-2.5 rounded hover:bg-white/10 transition-colors text-sm">
-            Apply to Join Our Network <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
       </section>
 

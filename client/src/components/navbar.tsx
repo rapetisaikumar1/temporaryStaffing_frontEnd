@@ -2,43 +2,44 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center justify-center h-8 w-8 rounded bg-[#0d2b5e] text-white text-xs font-black tracking-tight">SP</div>
-            <span className="text-lg font-bold text-[#0d2b5e] tracking-tight">StaffPro</span>
+          <Link href="/" className="flex flex-col items-start gap-0 shrink-0">
+            <span className="text-3xl font-extrabold text-[#0033a0] tracking-tighter leading-none">StaffPro</span>
+            <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest pl-1">Workforce Solutions</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <Link href="/about" className="hover:text-[#0d2b5e] transition-colors whitespace-nowrap">About</Link>
-            <Link href="/services" className="hover:text-[#0d2b5e] transition-colors whitespace-nowrap">For Employers</Link>
-            <Link href="/join-team" className="hover:text-[#0d2b5e] transition-colors whitespace-nowrap">For Job Seekers</Link>
-            <Link href="/industries" className="hover:text-[#0d2b5e] transition-colors whitespace-nowrap">Industries</Link>
-            <Link href="/contact" className="hover:text-[#0d2b5e] transition-colors whitespace-nowrap">Contact</Link>
+          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-gray-600">
+            <Link href="/join-team" className="hover:text-[#0033a0] transition-colors">Job Seekers</Link>
+            <Link href="/services" className="hover:text-[#0033a0] transition-colors">Employers</Link>
+            <Link href="/industries" className="hover:text-[#0033a0] transition-colors">Specialties</Link>
+            <Link href="/about" className="hover:text-[#0033a0] transition-colors">About Us</Link>
+            <Link href="/contact" className="hover:text-[#0033a0] transition-colors">Contact</Link>
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             <Link
               href="/join-team"
-              className="text-sm font-medium text-[#0d2b5e] hover:underline underline-offset-4 transition-all whitespace-nowrap"
+              className="text-[15px] font-semibold text-[#0033a0] hover:text-[#0d2b5e] flex items-center gap-1.5 transition-colors"
             >
-              Find Jobs
+              <User className="h-4 w-4" /> Log In
             </Link>
+            <div className="w-px h-5 bg-gray-300 mx-2"></div>
             <Link
               href="/request-staff"
-              className="text-sm font-semibold bg-[#0d2b5e] text-white px-5 py-2 rounded hover:bg-[#1a3f7a] transition-colors whitespace-nowrap"
+              className="text-[15px] font-bold bg-[#0033a0] text-white px-5 py-2.5 rounded hover:bg-[#002277] transition-colors whitespace-nowrap"
             >
-              Request Staff
+              Hire Talent
             </Link>
           </div>
 
@@ -48,23 +49,30 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-3">
-          <Link href="/about" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileOpen(false)}>About</Link>
-          <Link href="/services" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileOpen(false)}>For Employers</Link>
-          <Link href="/join-team" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileOpen(false)}>For Job Seekers</Link>
-          <Link href="/industries" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileOpen(false)}>Industries</Link>
-          <Link href="/contact" className="block text-sm font-medium text-gray-700 py-2" onClick={() => setMobileOpen(false)}>Contact</Link>
-          <div className="pt-2 border-t border-gray-100 flex flex-col gap-2">
-            <Link href="/join-team" className="text-sm font-medium text-[#0d2b5e]" onClick={() => setMobileOpen(false)}>Find Jobs →</Link>
-            <Link href="/request-staff" className="text-sm font-semibold bg-[#0d2b5e] text-white px-4 py-2 rounded text-center" onClick={() => setMobileOpen(false)}>Request Staff</Link>
-          </div>
+        <div className="lg:hidden bg-white border-t border-gray-100">
+          <nav className="flex flex-col p-4 space-y-4 text-base font-semibold text-gray-700">
+            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Job Seekers</Link>
+            <Link href="/services" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Employers</Link>
+            <Link href="/industries" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Specialties</Link>
+            <Link href="/about" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">About Us</Link>
+            <Link href="/contact" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Contact</Link>
+            
+            <hr className="border-gray-100 my-2" />
+            
+            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 text-[#0033a0]">
+              <User className="h-5 w-5" /> Log In
+            </Link>
+            <Link href="/request-staff" onClick={() => setMobileOpen(false)} className="bg-[#0033a0] text-white text-center rounded px-4 py-3">
+              Hire Talent
+            </Link>
+          </nav>
         </div>
       )}
     </header>
