@@ -122,7 +122,7 @@ export default function ServicesPage() {
                       alt={svc.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-[#0b1f41]/30" />
+                    <div className="absolute inset-0 bg-[#0b1f41]/10" />
                     <div className="absolute bottom-4 left-4 flex items-center gap-3">
                       <div className="h-10 w-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
                         <Icon className="h-5 w-5 text-white" />

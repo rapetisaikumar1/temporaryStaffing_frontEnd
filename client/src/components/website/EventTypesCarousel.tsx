@@ -118,7 +118,7 @@ export default function EventTypesCarousel() {
               <Link
                 key={type.name}
                 href="/industries"
-                className="group relative shrink-0 w-80 h-80 rounded-lg overflow-hidden border border-gray-200 hover:border-[#0033a0] hover:shadow-xl transition-all"
+                className="group relative shrink-0 w-96 h-96 rounded-lg overflow-hidden border border-gray-200 hover:border-[#0033a0] hover:shadow-xl transition-all"
               >
                 <img
                   src={type.image}
@@ -126,7 +126,7 @@ export default function EventTypesCarousel() {
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f41]/20 via-[#0b1f41]/45 to-[#0b1f41]/70" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f41]/5 via-[#0b1f41]/25 to-[#0b1f41]/55" />
                 <div className="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">
                   <div className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center mb-4">
                     <Icon className="h-7 w-7 text-[#0033a0]" />
