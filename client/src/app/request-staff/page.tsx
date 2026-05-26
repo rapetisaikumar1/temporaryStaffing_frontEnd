@@ -42,8 +42,8 @@ export default function RequestStaffPage() {
             <span>/</span>
             <span>Request Staff</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Request Staff</h1>
-          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">Fill out the form below. A staffing coordinator will respond within 2 business hours with a customized proposal.</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Request Event Staff</h1>
+          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">Tell us your event type, dates, location, and crew size. A dedicated event staffing coordinator will respond with a custom proposal within 2 hours.</p>
         </div>
       </section>
 
@@ -56,10 +56,10 @@ export default function RequestStaffPage() {
                 <h2 className="text-lg font-bold text-[#0d2b5e] mb-4">What happens next?</h2>
                 <ul className="space-y-4">
                   {[
-                    { step: '01', text: 'A dedicated coordinator reviews your request and contacts you within 2 hours.' },
-                    { step: '02', text: 'We identify and pre-screen the right candidates from our talent network.' },
-                    { step: '03', text: 'You receive candidate profiles and confirm your team. Staff are briefed and confirmed.' },
-                    { step: '04', text: 'Your staff arrives on-site ready to work. We stay available throughout the event.' },
+                    { step: '01', text: 'A dedicated event staffing coordinator reviews your request and contacts you within 2 hours — often sooner for urgent events.' },
+                    { step: '02', text: 'We match your event type and role requirements against our pre-vetted talent pool, selecting workers experienced in that specific environment.' },
+                    { step: '03', text: 'You receive worker profiles and confirm your crew. Everyone is briefed on your event details, dress code, and arrival time.' },
+                    { step: '04', text: 'Your crew arrives on time, uniformed, and ready. Your coordinator remains on-call throughout your event for any last-minute needs.' },
                   ].map(({ step, text }) => (
                     <li key={step} className="flex items-start gap-3">
                       <span className="text-xs font-black text-[#0d2b5e] bg-blue-50 h-6 w-6 rounded flex items-center justify-center shrink-0 mt-0.5">{step}</span>
@@ -69,7 +69,7 @@ export default function RequestStaffPage() {
                 </ul>
               </div>
               <div className="border-t border-gray-200 pt-6 space-y-2">
-                {['No fees until staff is confirmed', 'W-2 employees — zero liability', '24-hour emergency staffing available', 'Service available in 48 states'].map((item) => (
+                {['No fees until your crew is confirmed', 'W-2 employees — zero employer liability for you', 'Same-day & last-minute event staffing available', 'Serving 50+ cities across 48 states', 'Background-checked and role-verified talent', 'GPS-confirmed event day check-in'].map((item) => (
                   <div key={item} className="flex items-center gap-2 text-sm text-gray-600">
                     <CheckCircle2 className="h-4 w-4 text-[#0d2b5e] shrink-0" />
                     {item}

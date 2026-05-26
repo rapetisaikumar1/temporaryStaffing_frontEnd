@@ -40,10 +40,10 @@ export default function JoinTeamPage() {
           <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span>For Job Seekers</span>
+            <span>Find Event Gigs</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Join Our Talent Network</h1>
-          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">Apply to become a StaffPro professional. We match you with temporary, part-time, and full-time opportunities that fit your schedule and skills.</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Work the Events You Love</h1>
+          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">Join StaffPro's talent network and get access to paid shifts at concerts, galas, trade shows, sporting events, festivals, and more — on a schedule that works for you.</p>
         </div>
       </section>
 
@@ -53,15 +53,15 @@ export default function JoinTeamPage() {
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-6">
               <div>
-                <h2 className="text-lg font-bold text-[#0d2b5e] mb-4">Why work with StaffPro?</h2>
+                <h2 className="text-lg font-bold text-[#0d2b5e] mb-4">Why work events with StaffPro?</h2>
                 <ul className="space-y-3">
                   {[
-                    'Consistent work opportunities across multiple industries',
-                    'Weekly pay — direct deposit every Friday',
-                    'Access to exclusive events, trade shows, and galas',
-                    'W-2 employment with liability coverage included',
-                    'Performance-based advancement into higher-paying roles',
-                    'Dedicated placement coordinator as your point of contact',
+                    'Work concerts, galas, trade shows & sporting events',
+                    'Weekly direct-deposit pay every Friday',
+                    'Choose your own shifts — total flexibility',
+                    'W-2 employment with full liability coverage',
+                    'Access to premium venues and high-profile events',
+                    'Free role-specific training & TIPS certification support',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
                       <CheckCircle2 className="h-4 w-4 text-[#0d2b5e] shrink-0 mt-0.5" />
@@ -71,9 +71,9 @@ export default function JoinTeamPage() {
                 </ul>
               </div>
               <div className="border-t border-gray-200 pt-6">
-                <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Roles we fill</p>
+                <p className="text-xs text-gray-400 font-medium uppercase tracking-wider mb-2">Event roles we hire for</p>
                 <div className="flex flex-wrap gap-2">
-                  {['Event Host', 'Brand Ambassador', 'Bartender', 'Server', 'Registration Staff', 'Warehouse Associate', 'Administrative Temp', 'Production Crew'].map((r) => (
+                  {['Bartender', 'Event Server', 'Brand Ambassador', 'VIP Host', 'Security Guard', 'Stagehand', 'Registration Staff', 'Ticket Scanner', 'Coat Check', 'Concierge Host'].map((r) => (
                     <span key={r} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">{r}</span>
                   ))}
                 </div>

@@ -14,14 +14,14 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex flex-col items-start gap-0 shrink-0">
             <span className="text-3xl font-extrabold text-[#0033a0] tracking-tighter leading-none">StaffPro</span>
-            <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest pl-1">Workforce Solutions</span>
+            <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest pl-1">Event Staffing Solutions</span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-gray-600">
-            <Link href="/join-team" className="hover:text-[#0033a0] transition-colors">Job Seekers</Link>
-            <Link href="/services" className="hover:text-[#0033a0] transition-colors">Employers</Link>
-            <Link href="/industries" className="hover:text-[#0033a0] transition-colors">Specialties</Link>
+            <Link href="/join-team" className="hover:text-[#0033a0] transition-colors">Find Event Gigs</Link>
+            <Link href="/services" className="hover:text-[#0033a0] transition-colors">Hire Event Staff</Link>
+            <Link href="/industries" className="hover:text-[#0033a0] transition-colors">Event Types</Link>
             <Link href="/about" className="hover:text-[#0033a0] transition-colors">About Us</Link>
             <Link href="/contact" className="hover:text-[#0033a0] transition-colors">Contact</Link>
           </nav>
@@ -39,7 +39,7 @@ export function Navbar() {
               href="/request-staff"
               className="text-[15px] font-bold bg-[#0033a0] text-white px-5 py-2.5 rounded hover:bg-[#002277] transition-colors whitespace-nowrap"
             >
-              Hire Talent
+              Request Staff Now
             </Link>
           </div>
 
@@ -58,9 +58,9 @@ export function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100">
           <nav className="flex flex-col p-4 space-y-4 text-base font-semibold text-gray-700">
-            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Job Seekers</Link>
-            <Link href="/services" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Employers</Link>
-            <Link href="/industries" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Specialties</Link>
+            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Find Event Gigs</Link>
+            <Link href="/services" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Hire Event Staff</Link>
+            <Link href="/industries" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Event Types</Link>
             <Link href="/about" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">About Us</Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Contact</Link>
             
@@ -70,7 +70,7 @@ export function Navbar() {
               <User className="h-5 w-5" /> Log In
             </Link>
             <Link href="/request-staff" onClick={() => setMobileOpen(false)} className="bg-[#0033a0] text-white text-center rounded px-4 py-3">
-              Hire Talent
+              Request Staff Now
             </Link>
           </nav>
         </div>

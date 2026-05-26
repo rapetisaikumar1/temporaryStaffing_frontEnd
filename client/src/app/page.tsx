@@ -1,162 +1,296 @@
 import Link from 'next/link';
-import { Search, MapPin, ChevronRight, Briefcase, Users, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Search, MapPin, ChevronRight, Briefcase, Users, CheckCircle2, ArrowRight, Calendar, Wine, ShieldAlert, Award, Star, Clock, TrendingUp, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-const specialties = [
-  'Administrative & Customer Service',
-  'Finance & Accounting',
-  'Technology',
-  'Marketing & Creative',
-  'Legal',
-  'Human Resources',
-  'Manufacturing & Logistics',
-  'Healthcare'
+const eventTypes = [
+  { name: 'Corporate Events & Conferences', icon: Briefcase },
+  { name: 'Music Festivals & Concerts', icon: Star },
+  { name: 'Weddings & Private Parties', icon: Wine },
+  { name: 'Trade Shows & Expos', icon: TrendingUp },
+  { name: 'Sporting Events & Stadiums', icon: Award },
+  { name: 'Brand Activations', icon: BadgeCheck },
+  { name: 'Charity Galas & Fundraisers', icon: Calendar },
+  { name: 'VIP & Red Carpet Events', icon: ShieldAlert },
+];
+
+const roles = [
+  'Bartenders & Mixologists',
+  'Banquet Servers',
+  'Brand Ambassadors',
+  'Event Security Guards',
+  'Trade Show Hosts',
+  'Stagehands & Crew',
+  'Registration Staff',
+  'VIP Escorts',
+];
+
+const testimonials = [
+  { quote: 'StaffPro placed 80 bartenders and servers for our 3-day festival with 48 hours notice. Every single person showed up uniformed and ready.', name: 'Sarah M.', title: 'Director of Events, Horizon Music Group' },
+  { quote: 'Our annual conference runs like clockwork now. Their registration staff and concierge hosts have become an extension of our own team.', name: 'David K.', title: 'VP Operations, National Trade Alliance' },
+  { quote: 'No-shows used to be our biggest fear. With StaffPro, it\'s never crossed our mind once in three years of working together.', name: 'Jennifer R.', title: 'Executive Producer, Prestige Event Co.' },
 ];
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full font-sans">
-      {/* Generic Staffing Hero with Search Card */}
-      <section className="relative w-full py-16 md:py-28 lg:py-40 bg-gray-900">
+
+      {/* HERO */}
+      <section className="relative w-full min-h-[540px] flex items-center bg-gray-900 py-16 md:py-28 lg:py-36">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" 
-            alt="Professionals in office" 
-            className="w-full h-full object-cover opacity-50"
+          <img
+            src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop"
+            alt="Large event with crowd"
+            className="w-full h-full object-cover opacity-45"
           />
         </div>
-        
         <div className="container relative z-10 mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl bg-white p-8 md:p-12 rounded shadow-2xl mx-auto md:mx-0 text-left">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#0033a0] mb-4 tracking-tight">Let's find your next great opportunity.</h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl">Search thousands of open positions or connect with a recruiter to advance your career.</p>
-            
-            <div className="flex flex-col md:flex-row gap-4 mb-8">
+          <div className="max-w-3xl bg-white p-8 md:p-12 rounded shadow-2xl mx-auto md:mx-0">
+            <div className="inline-block bg-blue-100 text-[#0033a0] px-3 py-1 text-xs font-bold uppercase tracking-widest mb-5 rounded-sm">
+              America's #1 Temporary Event Staffing Agency
+            </div>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-[#0b1f41] mb-4 tracking-tight leading-tight">
+              Elite temporary staff for every event, on demand.
+            </h1>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
+              Bartenders, servers, security, brand ambassadors, stagehands — fully vetted, W-2 insured, and ready to deploy within 24 hours anywhere in the country. Or browse open shifts near you.
+            </p>
+            <div className="flex flex-col md:flex-row gap-3 mb-8">
               <div className="relative flex-1">
-                <Search className="absolute left-4 top-3.5 h-6 w-6 text-gray-400" />
-                <Input type="text" placeholder="Job title, keywords, or company" className="pl-12 h-14 text-lg rounded-sm border-gray-300" />
+                <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
+                <Input type="text" placeholder="Role (e.g. Bartender, Security)" className="pl-11 h-13 text-base rounded-sm border-gray-300" />
               </div>
               <div className="relative flex-1">
-                <MapPin className="absolute left-4 top-3.5 h-6 w-6 text-gray-400" />
-                <Input type="text" placeholder="City, state, or zip code" className="pl-12 h-14 text-lg rounded-sm border-gray-300" />
+                <MapPin className="absolute left-4 top-3.5 h-5 w-5 text-gray-400" />
+                <Input type="text" placeholder="City, state, or zip code" className="pl-11 h-13 text-base rounded-sm border-gray-300" />
               </div>
-              <Button size="lg" className="h-14 px-10 bg-[#0033a0] hover:bg-[#002277] text-white text-lg font-bold rounded-sm w-full md:w-auto">
-                Search Jobs
+              <Button size="lg" className="bg-[#0033a0] hover:bg-[#002277] text-white font-bold rounded-sm w-full md:w-auto px-8 whitespace-nowrap">
+                Find Gigs
               </Button>
             </div>
-            
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-base font-semibold border-t border-gray-200 pt-6">
-              <span className="text-gray-600">Are you an employer looking to hire?</span>
-              <Link href="/request-staff" className="text-[#0033a0] hover:underline flex items-center">
-                Request talent today <ArrowRight className="ml-1.5 h-5 w-5" />
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm font-semibold border-t border-gray-200 pt-5">
+              <span className="text-gray-500">Planning an event and need to hire staff?</span>
+              <Link href="/request-staff" className="text-[#0033a0] hover:underline flex items-center gap-1">
+                Request your crew now <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Bar / Stats - Standard Corporate Practice */}
+      {/* TRUST BAR */}
       <section className="bg-gray-100 border-b border-gray-200 py-10">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-24 text-center">
+        <div className="container mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-4xl font-extrabold text-[#0033a0]">10,000+</div>
-            <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">Placements this year</div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">15,000+</div>
+            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">Events Staffed</div>
           </div>
-          <div className="hidden md:block w-px h-16 bg-gray-300"></div>
           <div>
-            <div className="text-4xl font-extrabold text-[#0033a0]">48</div>
-            <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">States Covered</div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">50,000+</div>
+            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">Vetted Professionals</div>
           </div>
-          <div className="hidden md:block w-px h-16 bg-gray-300"></div>
           <div>
-            <div className="text-4xl font-extrabold text-[#0033a0]">2.5m+</div>
-            <div className="text-sm font-bold text-gray-500 uppercase tracking-widest mt-1">Candidates in network</div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">24/7</div>
+            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">Dispatch Support</div>
+          </div>
+          <div>
+            <div className="text-4xl font-extrabold text-[#0033a0]">100%</div>
+            <div className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">W-2 Compliant</div>
           </div>
         </div>
       </section>
 
-      {/* Specialties Section - Standard Clean Grid */}
+      {/* EVENT TYPES GRID */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries we serve</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Our specialized recruiters connect you with the right talent or opportunity across key sectors.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Event types we specialize in</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our specialized talent networks are built around specific event environments — so the professionals we send actually know the job.
+            </p>
           </div>
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
-            {specialties.map((spec) => (
-               <Link key={spec} href="/industries" className="flex items-center justify-between p-6 bg-white border border-gray-200 rounded-sm hover:border-[#0033a0] hover:shadow-lg transition-all group cursor-pointer">
-                 <span className="font-bold text-gray-800 text-lg group-hover:text-[#0033a0] leading-tight">{spec}</span>
-                 <ChevronRight className="h-6 w-6 text-gray-400 group-hover:text-[#0033a0] shrink-0" />
-               </Link>
-            ))}
+            {eventTypes.map((type) => {
+              const Icon = type.icon;
+              return (
+                <Link key={type.name} href="/industries" className="flex flex-col items-center justify-center p-8 bg-white border border-gray-200 rounded text-center hover:border-[#0033a0] hover:shadow-lg transition-all group">
+                  <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-[#0033a0] transition-colors">
+                    <Icon className="h-7 w-7 text-[#0033a0] group-hover:text-white transition-colors" />
+                  </div>
+                  <span className="font-bold text-gray-800 text-base group-hover:text-[#0033a0] leading-snug">{type.name}</span>
+                </Link>
+              );
+            })}
           </div>
           <div className="text-center mt-12">
-            <Link href="/industries" className="inline-flex items-center text-[#0033a0] font-bold hover:underline text-lg">
-              View all specialties <ArrowRight className="ml-2 h-5 w-5" />
+            <Link href="/industries" className="inline-flex items-center text-[#0033a0] font-bold hover:underline text-base">
+              View all event categories <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Dual Path - The most generic staffing pattern */}
-      <section className="w-full text-center">
+      {/* POPULAR ROLES TICKER ROW */}
+      <section className="bg-[#0033a0] py-6 overflow-hidden border-y border-[#0027881]">
+        <div className="flex gap-10 animate-none flex-wrap justify-center px-4">
+          {roles.map((role) => (
+            <span key={role} className="text-white font-semibold text-sm flex items-center gap-3 whitespace-nowrap">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-300 inline-block"></span>
+              {role}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* ROLES WE FILL */}
+      <section className="py-24 bg-gray-50 border-b border-gray-200">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
+              <div className="text-xs font-bold uppercase tracking-widest text-[#0033a0] mb-3">Temporary Event Staffing</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Every role your event needs — covered.</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Whether you need one emergency fill-in or a crew of 300 for a multi-day festival, we deploy pre-screened talent across every event discipline. All workers are background-checked, trained, and employed as W-2 staff — so you carry zero liability.
+              </p>
+              <ul className="space-y-5 mb-10">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-[#0033a0] shrink-0 mt-0.5" />
+                  <div><span className="font-bold text-gray-900">Hospitality & Catering — </span><span className="text-gray-600">Bartenders, Mixologists, Banquet Servers, Coat Check, Kitchen Assistants, Event Captains</span></div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-[#0033a0] shrink-0 mt-0.5" />
+                  <div><span className="font-bold text-gray-900">Security & Crowd Management — </span><span className="text-gray-600">Licensed Guards, Ticket Takers, Barricade Staff, VIP Escorts, Bag Checkers</span></div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-[#0033a0] shrink-0 mt-0.5" />
+                  <div><span className="font-bold text-gray-900">Promotional & Brand — </span><span className="text-gray-600">Brand Ambassadors, Product Demonstrators, Registration Staff, Trade Show Hosts</span></div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-[#0033a0] shrink-0 mt-0.5" />
+                  <div><span className="font-bold text-gray-900">Event Production — </span><span className="text-gray-600">Stagehands, Setup & Teardown Crews, A/V Assistants, Parking Attendants</span></div>
+                </li>
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild className="bg-[#0033a0] hover:bg-[#002277] text-white px-8 py-3 text-base font-bold">
+                  <Link href="/request-staff">Request a Custom Crew</Link>
+                </Button>
+                <Button asChild variant="outline" className="border-[#0033a0] text-[#0033a0] px-8 py-3 text-base font-bold hover:bg-blue-50">
+                  <Link href="/services">View All Services</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-2 gap-4">
+              <img src="https://images.unsplash.com/photo-1559883584-3c582531cd80?q=80&w=900&auto=format&fit=crop" alt="Bartender at event" className="rounded shadow-lg h-64 object-cover w-full" />
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop" alt="Event setup crew" className="rounded shadow-lg h-64 object-cover w-full mt-8" />
+              <img src="https://images.unsplash.com/photo-1549451371-64aa98a6f660?q=80&w=900&auto=format&fit=crop" alt="Brand ambassadors" className="rounded shadow-lg h-64 object-cover w-full -mt-8" />
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop" alt="Event team" className="rounded shadow-lg h-64 object-cover w-full" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DUAL PATH */}
+      <section className="w-full">
         <div className="grid md:grid-cols-2">
-          {/* Employers */}
-          <div className="bg-[#0b1f41] text-white px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center">
-            <Briefcase className="h-16 w-16 text-blue-300 mb-8" />
-            <h2 className="text-4xl font-bold mb-6">I am looking to hire</h2>
-            <p className="text-blue-100 text-xl mb-10 max-w-md mx-auto">Find highly skilled professionals for temporary, project-based, or permanent roles.</p>
-            <Link href="/request-staff" className="bg-white text-[#0b1f41] font-bold text-lg px-10 py-4 rounded-sm hover:bg-gray-100 transition-colors inline-block w-full sm:w-auto">
-              Request Talent
+          <div className="bg-[#0b1f41] text-white px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center text-center">
+            <Calendar className="h-16 w-16 text-blue-300 mb-8" />
+            <h2 className="text-4xl font-bold mb-4">I need event staff</h2>
+            <p className="text-blue-100 text-xl mb-6 max-w-md">Scale your team instantly for any event — concerts, corporate dinners, trade shows, galas, and more.</p>
+            <ul className="text-blue-200 text-sm space-y-2 mb-10 text-left w-full max-w-sm">
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Same-day & last-minute bookings</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Fully insured W-2 employees</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Crews from 1 to 300+ people</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Dedicated onsite event coordinator</li>
+            </ul>
+            <Link href="/request-staff" className="bg-white text-[#0b1f41] font-bold text-lg px-10 py-4 rounded-sm hover:bg-gray-100 transition-colors w-full sm:w-auto inline-block">
+              Request Your Crew
             </Link>
           </div>
-          {/* Job Seekers */}
-          <div className="bg-[#f0f4f8] text-[#0b1f41] px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center">
+          <div className="bg-[#f0f4f8] text-[#0b1f41] px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center text-center">
             <Users className="h-16 w-16 text-[#0033a0] mb-8" />
-            <h2 className="text-4xl font-bold mb-6">I am looking for a job</h2>
-            <p className="text-gray-600 text-xl mb-10 max-w-md mx-auto">Browse open jobs, submit your resume, and get matched with top employers.</p>
-            <Link href="/join-team" className="bg-[#0033a0] text-white font-bold text-lg px-10 py-4 rounded-sm hover:bg-[#002277] transition-colors inline-block w-full sm:w-auto">
-              Search Jobs
+            <h2 className="text-4xl font-bold mb-4">I want event gigs</h2>
+            <p className="text-gray-600 text-xl mb-6 max-w-md">Work high-profile concerts, galas, and corporate events on your own schedule with weekly direct-deposit pay.</p>
+            <ul className="text-gray-600 text-sm space-y-2 mb-10 text-left w-full max-w-sm">
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Flexible shifts — you choose when you work</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Weekly direct-deposit pay</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Access to premium venues & events</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Free skills & compliance training</li>
+            </ul>
+            <Link href="/join-team" className="bg-[#0033a0] text-white font-bold text-lg px-10 py-4 rounded-sm hover:bg-[#002277] transition-colors w-full sm:w-auto inline-block">
+              Browse Open Shifts
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Standard layout */}
+      {/* WHY STAFFPRO */}
       <section className="py-24 bg-white border-t border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dedicated to your success</h2>
-            <p className="text-xl text-gray-600">Why thousands of businesses and professionals rely on StaffPro.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why top event organizers rely on StaffPro</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">We remove the risk and headache of temporary staffing so your team can focus entirely on delivering a great event.</p>
           </div>
-          
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <div className="flex flex-col items-center">
               <div className="h-20 w-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
-                <Search className="h-10 w-10 text-[#0033a0]" />
+                <ShieldAlert className="h-10 w-10 text-[#0033a0]" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Extensive Network</h3>
-              <p className="text-gray-600 text-lg">Access to a pre-vetted database of millions of active job seekers across all major industries.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Full Compliance & Insurance</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">All workers are employed as W-2 staff. We cover payroll taxes, worker's compensation, and carry $5M general liability coverage — so you carry zero employment risk at your venue.</p>
             </div>
-            
             <div className="flex flex-col items-center">
               <div className="h-20 w-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
                 <CheckCircle2 className="h-10 w-10 text-[#0033a0]" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Verified Quality</h3>
-              <p className="text-gray-600 text-lg">Every candidate goes through rigorous background checks, skills testing, and interviews.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Rigorously Vetted Talent</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">Every professional passes criminal background checks, reference verification, and role-specific assessments including TIPS certification for bar staff and Guard Card verification for security.</p>
             </div>
-            
             <div className="flex flex-col items-center">
               <div className="h-20 w-20 bg-blue-50 rounded-full flex items-center justify-center mb-8">
-                <FileText className="h-10 w-10 text-[#0033a0]" />
+                <Clock className="h-10 w-10 text-[#0033a0]" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Full Compliance</h3>
-              <p className="text-gray-600 text-lg">We handle payroll, taxes, insurance, and HR compliance so you can focus on your business.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Real-Time Shift Management</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">Our staffing platform provides live visibility into confirmed workers, GPS-based venue clock-ins, and instant replacements if someone calls off — all manageable from your phone.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-gray-50 border-t border-gray-200 py-24">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by the industry's best</h2>
+            <p className="text-xl text-gray-600">Event planners, venues, and brands across North America rely on StaffPro.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-white border border-gray-200 rounded p-8 flex flex-col">
+                <div className="flex gap-1 mb-6">
+                  {[1,2,3,4,5].map(i => <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />)}
+                </div>
+                <p className="text-gray-700 leading-relaxed italic flex-1 mb-6">"{t.quote}"</p>
+                <div>
+                  <div className="font-bold text-gray-900">{t.name}</div>
+                  <div className="text-sm text-gray-500">{t.title}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BOTTOM CTA BAND */}
+      <section className="bg-[#0033a0] py-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to staff your next event?</h2>
+        <p className="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">Submit your event details and a dedicated coordinator will respond with a custom crew proposal within 2 hours.</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/request-staff" className="bg-white text-[#0033a0] font-bold text-lg px-10 py-4 rounded-sm hover:bg-gray-100 transition-colors inline-block">
+            Request Event Staff
+          </Link>
+          <Link href="/join-team" className="border-2 border-white text-white font-bold text-lg px-10 py-4 rounded-sm hover:bg-white/10 transition-colors inline-block">
+            Find Event Gigs
+          </Link>
         </div>
       </section>
 

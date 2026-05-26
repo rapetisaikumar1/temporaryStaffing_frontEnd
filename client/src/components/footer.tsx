@@ -9,7 +9,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <span className="text-3xl font-extrabold text-white tracking-tighter leading-none mb-6 block">StaffPro.</span>
             <p className="text-gray-400 mb-6 max-w-sm text-base">
-              The global leader in HR services and connecting people with opportunities across all major industries.
+              America's premier temporary event staffing agency — deploying vetted bartenders, servers, brand ambassadors, security, and production crew to concerts, galas, trade shows, and more across all 48 continental states.
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-3">
@@ -28,22 +28,22 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Job Seekers</h4>
+            <h4 className="text-white font-bold mb-6 text-lg">Event Gig Seekers</h4>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/join-team" className="hover:text-white transition-colors">Search Jobs</Link></li>
-              <li><Link href="/join-team" className="hover:text-white transition-colors">Submit Resume</Link></li>
-              <li><Link href="/industries" className="hover:text-white transition-colors">Career Advice</Link></li>
-              <li><Link href="/join-team" className="hover:text-white transition-colors">Create Account</Link></li>
+              <li><Link href="/join-team" className="hover:text-white transition-colors">Browse Open Shifts</Link></li>
+              <li><Link href="/join-team" className="hover:text-white transition-colors">Apply to Join Network</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Event Types We Staff</Link></li>
+              <li><Link href="/join-team" className="hover:text-white transition-colors">Pay & Benefits</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Employers</h4>
+            <h4 className="text-white font-bold mb-6 text-lg">Hire Event Staff</h4>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/request-staff" className="hover:text-white transition-colors">Request Talent</Link></li>
-              <li><Link href="/services" className="hover:text-white transition-colors">Our Services</Link></li>
-              <li><Link href="/industries" className="hover:text-white transition-colors">Specialties</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Sales</Link></li>
+              <li><Link href="/request-staff" className="hover:text-white transition-colors">Request a Crew</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Staffing Services</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Industries Served</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Talk to a Coordinator</Link></li>
             </ul>
           </div>
 

@@ -14,7 +14,7 @@ export default function ContactPage() {
           </nav>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
-            Reach our team directly. For urgent staffing needs, call us — we have coordinators available around the clock.
+            Have an upcoming event? Reach our staffing coordinators directly. For urgent or same-day staffing needs, call us — our operations team is available around the clock.
           </p>
         </div>
       </section>
@@ -24,10 +24,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Phone, label: 'Phone', value: '1 (800) 555-0199', sub: 'Mon–Fri, 8am–6pm EST', href: 'tel:+18005550199' },
-              { icon: Mail, label: 'Email', value: 'hello@staffpro.demo', sub: 'We respond within 24 hours', href: 'mailto:hello@staffpro.demo' },
-              { icon: MapPin, label: 'Headquarters', value: '100 Business Pkwy, Suite 100', sub: 'New York, NY 10001', href: '#' },
-              { icon: Clock, label: 'Emergency Line', value: '1 (800) 555-0911', sub: 'Available 24/7 for urgent needs', href: 'tel:+18005550911' },
+              { icon: Phone, label: 'Phone', value: '1 (800) 555-0199', sub: 'Mon–Fri, 8am–8pm EST', href: 'tel:+18005550199' },
+              { icon: Mail, label: 'Email', value: 'hello@staffpro.demo', sub: 'We respond within 4 hours', href: 'mailto:hello@staffpro.demo' },
+              { icon: MapPin, label: 'Headquarters', value: '100 Event Center Pkwy', sub: 'New York, NY 10001', href: '#' },
+              { icon: Clock, label: '24/7 Emergency Line', value: '1 (800) 555-0911', sub: 'Same-day & last-minute staffing', href: 'tel:+18005550911' },
             ].map(({ icon: Icon, label, value, sub, href }) => (
               <a key={label} href={href} className="flex flex-col gap-3 p-6 border border-gray-200 rounded-lg hover:border-[#0d2b5e] hover:shadow-sm transition-all group">
                 <div className="h-9 w-9 rounded bg-[#0d2b5e]/8 flex items-center justify-center">
@@ -50,22 +50,22 @@ export default function ContactPage() {
           <h2 className="text-2xl font-bold text-[#0d2b5e] mb-8">What can we help you with?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white border border-gray-200 rounded-lg p-7">
-              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">I need to hire staff</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">Submit a staffing request and a coordinator will reach out within 2 business hours with a custom proposal.</p>
+              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">I need event staff</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Submit your event details — type, date, headcount, and roles needed. A dedicated coordinator will respond within 2 hours with a custom crew proposal and transparent pricing.</p>
               <Link href="/request-staff" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
-                Submit a request <ArrowRight className="h-4 w-4" />
+                Submit a staffing request <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-7">
-              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">I'm looking for work</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">Join our talent network and get matched with temporary and permanent positions across your area.</p>
+              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">I want to work events</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Join our event staffing talent network and get access to gigs at concerts, galas, trade shows, and sporting events. Work flexibly with weekly direct-deposit pay.</p>
               <Link href="/join-team" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
-                Apply now <ArrowRight className="h-4 w-4" />
+                Browse open shifts <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <div className="bg-white border border-gray-200 rounded-lg p-7">
               <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">General inquiry</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">Have a question about pricing, contracts, compliance, or our process? Our team is happy to help.</p>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Questions about pricing, contracts, W-2 compliance, minimum crew sizes, or how our vetting process works? Our team is happy to help.</p>
               <a href="mailto:hello@staffpro.demo" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
                 Send us an email <ArrowRight className="h-4 w-4" />
               </a>
@@ -78,7 +78,7 @@ export default function ContactPage() {
       <section className="py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-500 text-sm max-w-lg mx-auto">
-            StaffPro is headquartered in New York City with regional coordinators in Los Angeles, Chicago, Dallas, Miami, and Atlanta — serving clients across all 48 continental states.
+            StaffPro is headquartered in New York City with active staffing coordinators in Los Angeles, Chicago, Dallas, Miami, Atlanta, Las Vegas, Nashville, and Seattle — deploying event crews across all 48 continental states.
           </p>
         </div>
       </section>
