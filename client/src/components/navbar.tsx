@@ -2,10 +2,26 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X, User } from 'lucide-react';
+
+const navLinks = [
+  { label: 'Find Jobs', href: '/#find-jobs' },
+  { label: 'Job Seekers', href: '/join-team' },
+  { label: 'Employers', href: '/services' },
+  { label: 'Specialties', href: '/industries' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href.startsWith('/#')) return pathname === '/';
+    return pathname === href;
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm transition-all">
@@ -19,11 +35,19 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-gray-600">
-            <Link href="/join-team" className="hover:text-[#0033a0] transition-colors">Job Seekers</Link>
-            <Link href="/services" className="hover:text-[#0033a0] transition-colors">Employers</Link>
-            <Link href="/industries" className="hover:text-[#0033a0] transition-colors">Specialties</Link>
-            <Link href="/about" className="hover:text-[#0033a0] transition-colors">About Us</Link>
-            <Link href="/contact" className="hover:text-[#0033a0] transition-colors">Contact</Link>
+            {navLinks.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`pb-1 border-b-2 transition-colors ${
+                  isActive(href)
+                    ? 'text-[#0033a0] border-[#0033a0]'
+                    : 'border-transparent hover:text-[#0033a0] hover:border-[#0033a0]'
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
           {/* Desktop CTAs */}
@@ -58,11 +82,20 @@ export function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100">
           <nav className="flex flex-col p-4 space-y-4 text-base font-semibold text-gray-700">
-            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Job Seekers</Link>
-            <Link href="/services" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Employers</Link>
-            <Link href="/industries" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Specialties</Link>
-            <Link href="/about" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">About Us</Link>
-            <Link href="/contact" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Contact</Link>
+            {navLinks.map(({ label, href }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMobileOpen(false)}
+                className={`pl-2 border-l-4 transition-colors ${
+                  isActive(href)
+                    ? 'text-[#0033a0] border-[#0033a0]'
+                    : 'border-transparent hover:text-[#0033a0] hover:border-[#0033a0]'
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
             
             <hr className="border-gray-100 my-2" />
             

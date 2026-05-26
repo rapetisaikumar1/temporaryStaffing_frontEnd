@@ -28,7 +28,7 @@ export default function Home() {
     <div className="flex flex-col w-full font-sans">
 
       {/* HERO */}
-      <section className="relative w-full min-h-[540px] flex items-center bg-gray-900 py-16 md:py-28 lg:py-36">
+      <section id="find-jobs" className="relative w-full min-h-[540px] flex items-center bg-gray-900 py-16 md:py-28 lg:py-36">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop"
