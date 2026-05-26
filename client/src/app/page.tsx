@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Search, MapPin, Users, CheckCircle2, ArrowRight, Calendar, ShieldAlert, Star, Clock } from 'lucide-react';
+import { Search, MapPin, Users, CheckCircle2, ArrowRight, Calendar, ShieldAlert, Star, Clock, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import EventTypesCarousel from '@/components/website/EventTypesCarousel';
@@ -174,32 +174,32 @@ export default function Home() {
       {/* DUAL PATH */}
       <section className="w-full">
         <div className="grid md:grid-cols-2">
-          <div className="bg-[#0b1f41] text-white px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center text-center">
-            <Calendar className="h-16 w-16 text-blue-300 mb-8" />
-            <h2 className="text-4xl font-bold mb-4">I need event staff</h2>
-            <p className="text-blue-100 text-xl mb-6 max-w-md">Scale your team instantly for any event — concerts, corporate dinners, trade shows, galas, and more.</p>
-            <ul className="text-blue-200 text-sm space-y-2 mb-10 text-left w-full max-w-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Same-day & last-minute bookings</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Fully insured W-2 employees</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Crews from 1 to 300+ people</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Dedicated onsite event coordinator</li>
+          <div className="bg-[#0b1f41] text-white px-6 py-14 md:px-14 md:py-20 flex flex-col items-center justify-center text-center">
+            <Briefcase className="h-12 w-12 text-blue-300 mb-5" />
+            <h2 className="text-3xl font-bold mb-3">I need temporary staff</h2>
+            <p className="text-blue-100 text-base mb-4 max-w-md">Scale your workforce on demand — office support, light industrial, hospitality, customer service, and more.</p>
+            <ul className="text-blue-200 text-sm space-y-1.5 mb-7 text-left w-full max-w-xs">
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Same-day & short-notice placements</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Fully screened, W-2 employees</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Teams from 1 to 500+ workers</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 shrink-0" /> Dedicated account manager</li>
             </ul>
-            <Link href="/request-staff" className="bg-white text-[#0b1f41] font-bold text-lg px-10 py-4 rounded-sm hover:bg-gray-100 transition-colors w-full sm:w-auto inline-block">
-              Request Your Crew
+            <Link href="/request-staff" className="bg-white text-[#0b1f41] font-bold text-base px-8 py-3 rounded-sm hover:bg-gray-100 transition-colors w-full sm:w-auto inline-block">
+              Request Staff Now
             </Link>
           </div>
-          <div className="bg-[#f0f4f8] text-[#0b1f41] px-8 py-24 md:px-20 md:py-32 flex flex-col items-center justify-center text-center">
-            <Users className="h-16 w-16 text-[#0033a0] mb-8" />
-            <h2 className="text-4xl font-bold mb-4">I want event gigs</h2>
-            <p className="text-gray-600 text-xl mb-6 max-w-md">Work high-profile concerts, galas, and corporate events on your own schedule with weekly direct-deposit pay.</p>
-            <ul className="text-gray-600 text-sm space-y-2 mb-10 text-left w-full max-w-sm">
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Flexible shifts — you choose when you work</li>
+          <div className="bg-[#f0f4f8] text-[#0b1f41] px-6 py-14 md:px-14 md:py-20 flex flex-col items-center justify-center text-center">
+            <Users className="h-12 w-12 text-[#0033a0] mb-5" />
+            <h2 className="text-3xl font-bold mb-3">I&apos;m looking for work</h2>
+            <p className="text-gray-600 text-base mb-4 max-w-md">Find flexible temporary and contract jobs across industries — on your schedule with weekly direct-deposit pay.</p>
+            <ul className="text-gray-600 text-sm space-y-1.5 mb-7 text-left w-full max-w-xs">
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Flexible hours — full-time, part-time & short-term</li>
               <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Weekly direct-deposit pay</li>
-              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Access to premium venues & events</li>
+              <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Jobs across multiple industries</li>
               <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Free skills & compliance training</li>
             </ul>
-            <Link href="/join-team" className="bg-[#0033a0] text-white font-bold text-lg px-10 py-4 rounded-sm hover:bg-[#002277] transition-colors w-full sm:w-auto inline-block">
-              Browse Open Shifts
+            <Link href="/join-team" className="bg-[#0033a0] text-white font-bold text-base px-8 py-3 rounded-sm hover:bg-[#002277] transition-colors w-full sm:w-auto inline-block">
+              Browse Open Jobs
             </Link>
           </div>
         </div>
