@@ -1,18 +1,10 @@
 import Link from 'next/link';
-import { Search, MapPin, ChevronRight, Briefcase, Users, CheckCircle2, ArrowRight, Calendar, Wine, ShieldAlert, Award, Star, Clock, TrendingUp, BadgeCheck } from 'lucide-react';
+import { Search, MapPin, Users, CheckCircle2, ArrowRight, Calendar, ShieldAlert, Star, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import EventTypesCarousel from '@/components/website/EventTypesCarousel';
 
-const eventTypes = [
-  { name: 'Corporate Events & Conferences', icon: Briefcase },
-  { name: 'Music Festivals & Concerts', icon: Star },
-  { name: 'Weddings & Private Parties', icon: Wine },
-  { name: 'Trade Shows & Expos', icon: TrendingUp },
-  { name: 'Sporting Events & Stadiums', icon: Award },
-  { name: 'Brand Activations', icon: BadgeCheck },
-  { name: 'Charity Galas & Fundraisers', icon: Calendar },
-  { name: 'VIP & Red Carpet Events', icon: ShieldAlert },
-];
+
 
 const roles = [
   'Bartenders & Mixologists',
@@ -109,18 +101,8 @@ export default function Home() {
               Our specialized talent networks are built around specific event environments — so the professionals we send actually know the job.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
-            {eventTypes.map((type) => {
-              const Icon = type.icon;
-              return (
-                <Link key={type.name} href="/industries" className="flex flex-col items-center justify-center p-8 bg-white border border-gray-200 rounded text-center hover:border-[#0033a0] hover:shadow-lg transition-all group">
-                  <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-[#0033a0] transition-colors">
-                    <Icon className="h-7 w-7 text-[#0033a0] group-hover:text-white transition-colors" />
-                  </div>
-                  <span className="font-bold text-gray-800 text-base group-hover:text-[#0033a0] leading-snug">{type.name}</span>
-                </Link>
-              );
-            })}
+          <div className="max-w-7xl mx-auto">
+            <EventTypesCarousel />
           </div>
           <div className="text-center mt-12">
             <Link href="/industries" className="inline-flex items-center text-[#0033a0] font-bold hover:underline text-base">
