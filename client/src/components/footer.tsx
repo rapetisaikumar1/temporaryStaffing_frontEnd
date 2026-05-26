@@ -42,7 +42,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li><Link href="/request-staff" className="hover:text-white transition-colors">Request a Crew</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">Staffing Services</Link></li>
-              <li><Link href="/industries" className="hover:text-white transition-colors">Industries Served</Link></li>
+              <li><Link href="/industries" className="hover:text-white transition-colors">Sectors Served</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Talk to a Coordinator</Link></li>
             </ul>
           </div>

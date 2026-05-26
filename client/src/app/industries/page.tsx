@@ -87,9 +87,9 @@ export default function IndustriesPage() {
           <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
-            <span>Industries</span>
+            <span>Sectors</span>
           </nav>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5">Industries We Serve</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5">Sectors We Serve</h1>
           <p className="text-blue-100 text-xl max-w-3xl leading-relaxed">
             From stadium concerts to black-tie galas, we've built specialized talent networks for every event environment. The staff we send actually know the job.
           </p>
