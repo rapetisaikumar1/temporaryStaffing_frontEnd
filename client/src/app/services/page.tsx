@@ -5,6 +5,7 @@ const services = [
   {
     icon: Wine,
     title: 'Hospitality & Catering Staff',
+    image: 'https://images.unsplash.com/photo-1470338745628-171cf53de3a8?q=80&w=800&auto=format&fit=crop',
     desc: 'The backbone of any successful event. Our hospitality professionals bring poise, speed, and a guest-first attitude to every service interaction — from intimate corporate dinners to 5,000-person festivals.',
     roles: ['Banquet & Event Servers', 'Bartenders & Mixologists', 'Bar-backs & Runner Staff', 'Event Captains & Floor Leads', 'Coat Check Attendants', 'Food Station Assistants'],
     detail: 'All bar staff are TIPS/ServSafe certified. Uniformed or dressed to your event spec.',
@@ -13,6 +14,7 @@ const services = [
   {
     icon: Megaphone,
     title: 'Brand Ambassadors & Promotions',
+    image: 'https://images.unsplash.com/photo-1512485800893-b08ec1ea59b1?q=80&w=800&auto=format&fit=crop',
     desc: 'High-energy promotional professionals who represent your brand with confidence and authenticity at trade shows, product launches, pop-up activations, and experiential marketing tours.',
     roles: ['Trade Show Booth Hosts', 'Product Demonstrators', 'Sampling Agents', 'Street Team Members', 'Lead Generation Reps', 'Mobile Tour Staff'],
     detail: 'Available for single-day activations or multi-city promotional tours nationwide.',
@@ -21,6 +23,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: 'Event Security & Crowd Management',
+    image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=800&auto=format&fit=crop',
     desc: 'Professionally licensed security staff and crowd management specialists trained for high-density public environments. We keep your guests safe and your event running smoothly.',
     roles: ['Licensed Security Guards', 'Ticket Takers & Gate Crew', 'Bag Check & Entry Staff', 'VIP Escorts & Personal Security', 'Crowd Flow Coordinators', 'Parking & Traffic Control'],
     detail: 'All security personnel are licensed, background-checked, and certified in de-escalation.',
@@ -29,6 +32,7 @@ const services = [
   {
     icon: Users,
     title: 'Event Hosts & Guest Services',
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop',
     desc: 'The first and last impression your guests receive. Our guest services professionals create welcoming, frictionless experiences — from arrival to departure — at conferences, galas, and corporate functions.',
     roles: ['Conference Registration Staff', 'Badge Scanning & Check-in Crew', 'Concierge & Wayfinding Hosts', 'Greeter & Welcome Teams', 'VIP Check-in Coordinators', 'Information Desk Attendants'],
     detail: 'Bilingual hosts available. Branded uniforms and scripted talking points provided on request.',
@@ -37,6 +41,7 @@ const services = [
   {
     icon: Clapperboard,
     title: 'Event Production & Stagehands',
+    image: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop',
     desc: 'Experienced event production labor for load-in, setup, teardown, and on-site operational support. We work alongside your production team to ensure the physical execution of your event goes off without a hitch.',
     roles: ['Load-in & Load-out Crew', 'Stage & Set Construction Assistants', 'A/V Equipment Runners', 'General Venue Setup Crew', 'Backstage Production Assistants', 'Forklift Operators (certified)'],
     detail: 'Available on call for early-morning load-ins and late-night strikes. Union and non-union options.',
@@ -45,6 +50,7 @@ const services = [
   {
     icon: Trophy,
     title: 'Sporting Events & Stadium Staff',
+    image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?q=80&w=800&auto=format&fit=crop',
     desc: 'High-volume venue staffing for stadiums, arenas, and large-scale sporting events. From concessions to VIP suites, we supply the full spectrum of event-day roles.',
     roles: ['Concession Stand Operators', 'Suite Attendants & VIP Servers', 'Usher & Seating Staff', 'Merchandise Sellers', 'Parking Lot Attendants', 'Medical Support Coordinators (non-clinical)'],
     detail: 'Experienced with NFL, NBA, MLS, and major college venue protocols.',
@@ -53,6 +59,7 @@ const services = [
   {
     icon: HeartHandshake,
     title: 'Charity Galas & Fundraisers',
+    image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=800&auto=format&fit=crop',
     desc: 'Elegant, formal event staffing for non-profit galas, silent auctions, and fundraising banquets. Our staff understand the sensitivity and sophistication these events demand.',
     roles: ['Gala Dinner Servers', 'Silent Auction Staff', 'Donor Registration Hosts', 'Valet Parking Coordinators', 'MC & Program Assistants', 'Setup & Décor Crew'],
     detail: 'White-glove service standard. Formal attire provided or black-and-white dress code honored.',
@@ -61,6 +68,7 @@ const services = [
   {
     icon: Award,
     title: 'VIP & Red Carpet Events',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
     desc: 'Refined, discreet staffing for award shows, VIP receptions, celebrity events, and high-profile client entertainment where presentation and professionalism are non-negotiable.',
     roles: ['VIP & Green Room Hosts', 'Red Carpet Coordinators', 'Personal Assistants (event-day)', 'Luxury Concierge Staff', 'Photographer & Media Escorts', 'Premium Bartenders'],
     detail: 'NDA compliance available. Experienced with agency, entertainment, and luxury brand events.',
@@ -72,8 +80,11 @@ export default function ServicesPage() {
   return (
     <div className="bg-white">
       {/* Page Header */}
-      <section className="bg-[#0d2b5e] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[#0d2b5e] text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-20" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
@@ -103,13 +114,24 @@ export default function ServicesPage() {
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
-                <div key={svc.title} className="border border-gray-200 rounded-lg p-8 hover:border-[#0033a0] hover:shadow-lg transition-all flex flex-col">
-                  <div className="flex items-start gap-5 mb-5">
-                    <div className="h-12 w-12 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                      <Icon className="h-6 w-6 text-[#0033a0]" />
+                <div key={svc.title} className="border border-gray-200 rounded-xl overflow-hidden hover:border-[#0033a0] hover:shadow-xl transition-all flex flex-col group">
+                  {/* Card image */}
+                  <div className="relative h-52 overflow-hidden">
+                    <img
+                      src={svc.image}
+                      alt={svc.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-[#0b1f41]/50" />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                      <div className="h-10 w-10 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white leading-tight">{svc.title}</h3>
                     </div>
-                    <h3 className="text-xl font-bold text-[#0d2b5e] leading-tight pt-1">{svc.title}</h3>
                   </div>
+                  {/* Card body */}
+                  <div className="p-7 flex flex-col flex-1">
                   <p className="text-gray-600 leading-relaxed mb-6 text-base">{svc.desc}</p>
                   <div className="grid grid-cols-2 gap-2 mb-6">
                     {svc.roles.map((role) => (
@@ -124,6 +146,7 @@ export default function ServicesPage() {
                     <Link href={svc.cta} className="inline-flex items-center gap-2 text-sm font-bold text-[#0033a0] hover:underline underline-offset-4">
                       Request this service <ArrowRight className="h-4 w-4" />
                     </Link>
+                  </div>
                   </div>
                 </div>
               );

@@ -71,8 +71,11 @@ export default function IndustriesPage() {
   return (
     <div className="bg-white">
       {/* Page Header */}
-      <section className="bg-[#0d2b5e] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-[#0d2b5e] text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" className="w-full h-full object-cover opacity-25" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
