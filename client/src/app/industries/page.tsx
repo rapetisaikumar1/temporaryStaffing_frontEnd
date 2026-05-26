@@ -1,39 +1,95 @@
-import { Building2, CalendarSync, GlassWater, Mic2, Tent, VenetianMask } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+
+const industries = [
+  {
+    title: 'Corporate Events & Conferences',
+    desc: 'Large-scale summits, shareholder meetings, and corporate retreats requiring high-touch professional registration, badging, and wayfinding staff.',
+    roles: ['Registration Staff', 'Badge Scanning Crew', 'Concierge Hosts', 'Green Room Assistants'],
+    scale: 'Typical crew: 5 – 200 staff',
+  },
+  {
+    title: 'Trade Shows & Exhibitions',
+    desc: 'Engaging booth staff, lead-generation representatives, and product demonstrators to maximize brand exposure on the show floor.',
+    roles: ['Brand Ambassadors', 'Booth Demonstrators', 'Lead Gen Reps', 'Booth Setup Crew'],
+    scale: 'Typical crew: 2 – 50 staff per booth',
+  },
+  {
+    title: 'Brand Activations & PR Tours',
+    desc: 'Energetic promotional teams for pop-ups, street teams, and experiential marketing activations in any city.',
+    roles: ['Street Team Members', 'Sampling Agents', 'Mobile Tour Staff', 'Event Photographers (Asst)'],
+    scale: 'Typical crew: 2 – 30 staff',
+  },
+  {
+    title: 'Festivals & Concerts',
+    desc: 'High-volume operational staff for ticketing gates, crowd flow, VIP areas, and general event logistics at large public gatherings.',
+    roles: ['Ticket Scanners', 'VIP Hosts', 'Crowd Management Crew', 'Wristbanding Staff'],
+    scale: 'Typical crew: 20 – 500+ staff',
+  },
+  {
+    title: 'VIP & Gala Events',
+    desc: 'Polished, formally dressed staff for black-tie dinners, award ceremonies, high-end networking mixers, and charity galas.',
+    roles: ['Dinner Servers', 'Coat Check Attendants', 'Valet Coordinators', 'VIP Check-in Hosts'],
+    scale: 'Typical crew: 5 – 100 staff',
+  },
+  {
+    title: 'Private Events & Weddings',
+    desc: 'Discreet, professional service staff ensuring seamless execution of private celebrations, from intimate dinners to large receptions.',
+    roles: ['Event Servers', 'Bartenders', 'Setup & Breakdown Crew', 'Day-of Coordinators'],
+    scale: 'Typical crew: 2 – 40 staff',
+  },
+];
 
 export default function IndustriesPage() {
-  const industries = [
-    { icon: Building2, title: "Corporate Events & Conferences", desc: "Large-scale summits, shareholder meetings, and corporate retreats requiring high-touch professional registration and wayfinding staff." },
-    { icon: Tent, title: "Trade Shows & Exhibitions", desc: "Engaging brand ambassadors and sales assistants to drive booth traffic, scan badges, and qualify leads on the show floor." },
-    { icon: Mic2, title: "PR Tour & Brand Activations", desc: "Energetic promotional teams for pop-ups, street teams, and mobile vehicle tours nationwide." },
-    { icon: GlassWater, title: "VIP & Hospitality Events", desc: "Polished catered staff, VIP hosts, and mixologists for exclusive galas and high-end networking mixers." },
-    { icon: VenetianMask, title: "Festivals & Concerts", desc: "High-volume operational teams for ticketing, crowds, VIP tents, and general event logistics." },
-    { icon: CalendarSync, title: "Private Events & Weddings", desc: "Discreet and professional service staff to ensure seamless execution of private celebrations." },
-  ];
-
   return (
-    <div className="container mx-auto px-4 py-20 max-w-6xl">
-      <div className="text-center mb-16 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Industries & Event Types</h1>
-        <p className="text-lg text-muted-foreground">From corporate boardrooms to festival grounds, we supply the exact profile of talent your industry demands.</p>
-      </div>
+    <div className="bg-white">
+      {/* Page Header */}
+      <section className="bg-[#0d2b5e] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span>Industries</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Industries We Serve</h1>
+          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
+            From corporate boardrooms to festival grounds, we deliver the exact caliber of professional your event demands.
+          </p>
+        </div>
+      </section>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {industries.map((ind, idx) => {
-          const Icon = ind.icon;
-          return (
-            <Card key={idx} className="border-none shadow-md bg-muted/20">
-              <CardHeader>
-                <div className="h-10 w-10 bg-primary text-primary-foreground rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="h-5 w-5" />
+      {/* Industries Grid */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-6">
+            {industries.map((ind) => (
+              <div key={ind.title} className="border border-gray-200 rounded-lg p-7 hover:border-[#0d2b5e] hover:shadow-md transition-all">
+                <h3 className="text-lg font-bold text-[#0d2b5e] mb-2">{ind.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-5">{ind.desc}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {ind.roles.map((role) => (
+                    <span key={role} className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-medium">{role}</span>
+                  ))}
                 </div>
-                <CardTitle>{ind.title}</CardTitle>
-                <CardDescription className="pt-2 text-base">{ind.desc}</CardDescription>
-              </CardHeader>
-            </Card>
-          );
-        })}
-      </div>
+                <p className="text-xs text-gray-400 font-medium">{ind.scale}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-[#0d2b5e] text-white py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h2 className="text-2xl font-bold mb-2">Ready to staff your next event?</h2>
+            <p className="text-blue-100 text-sm max-w-md">Tell us your event type, headcount, and dates. We'll have pre-screened candidates ready within 24 hours.</p>
+          </div>
+          <Link href="/request-staff" className="shrink-0 inline-flex items-center gap-2 bg-white text-[#0d2b5e] font-semibold px-6 py-3 rounded hover:bg-blue-50 transition-colors text-sm">
+            Submit a Staffing Request <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

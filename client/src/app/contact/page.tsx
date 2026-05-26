@@ -1,50 +1,87 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { ArrowRight, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-20 max-w-5xl">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Contact Us</h1>
-        <p className="text-lg text-muted-foreground">General inquiries, corporate partnerships, and corporate office information.</p>
-      </div>
+    <div className="bg-white">
+      {/* Page Header */}
+      <section className="bg-[#0d2b5e] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="text-xs text-blue-300 mb-4 flex items-center gap-2">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span>Contact</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
+          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed">
+            Reach our team directly. For urgent staffing needs, call us — we have coordinators available around the clock.
+          </p>
+        </div>
+      </section>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-16">
-        <div className="flex flex-col items-center text-center p-6 bg-muted/20 rounded-2xl">
-          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-            <Phone className="h-6 w-6" />
+      {/* Contact Grid */}
+      <section className="py-16 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Phone, label: 'Phone', value: '1 (800) 555-0199', sub: 'Mon–Fri, 8am–6pm EST', href: 'tel:+18005550199' },
+              { icon: Mail, label: 'Email', value: 'hello@staffpro.demo', sub: 'We respond within 24 hours', href: 'mailto:hello@staffpro.demo' },
+              { icon: MapPin, label: 'Headquarters', value: '100 Business Pkwy, Suite 100', sub: 'New York, NY 10001', href: '#' },
+              { icon: Clock, label: 'Emergency Line', value: '1 (800) 555-0911', sub: 'Available 24/7 for urgent needs', href: 'tel:+18005550911' },
+            ].map(({ icon: Icon, label, value, sub, href }) => (
+              <a key={label} href={href} className="flex flex-col gap-3 p-6 border border-gray-200 rounded-lg hover:border-[#0d2b5e] hover:shadow-sm transition-all group">
+                <div className="h-9 w-9 rounded bg-[#0d2b5e]/8 flex items-center justify-center">
+                  <Icon className="h-4 w-4 text-[#0d2b5e]" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider font-medium mb-1">{label}</p>
+                  <p className="text-sm font-semibold text-[#0d2b5e] group-hover:underline underline-offset-2">{value}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{sub}</p>
+                </div>
+              </a>
+            ))}
           </div>
-          <h3 className="font-semibold text-lg mb-2">Phone</h3>
-          <p className="text-muted-foreground mb-4">Mon-Fri from 8am to 6pm EST.</p>
-          <a href="tel:+18005550199" className="font-medium hover:text-primary transition-colors">1 (800) 555-0199</a>
         </div>
-        
-        <div className="flex flex-col items-center text-center p-6 bg-muted/20 rounded-2xl">
-          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-            <Mail className="h-6 w-6" />
+      </section>
+
+      {/* Quick Action Cards */}
+      <section className="py-16 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-[#0d2b5e] mb-8">What can we help you with?</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white border border-gray-200 rounded-lg p-7">
+              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">I need to hire staff</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Submit a staffing request and a coordinator will reach out within 2 business hours with a custom proposal.</p>
+              <Link href="/request-staff" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
+                Submit a request <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-7">
+              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">I'm looking for work</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Join our talent network and get matched with temporary and permanent positions across your area.</p>
+              <Link href="/join-team" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
+                Apply now <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="bg-white border border-gray-200 rounded-lg p-7">
+              <h3 className="font-bold text-[#0d2b5e] text-lg mb-2">General inquiry</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">Have a question about pricing, contracts, compliance, or our process? Our team is happy to help.</p>
+              <a href="mailto:hello@staffpro.demo" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0d2b5e] hover:underline underline-offset-4">
+                Send us an email <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
           </div>
-          <h3 className="font-semibold text-lg mb-2">Email</h3>
-          <p className="text-muted-foreground mb-4">Our friendly team is here to help.</p>
-          <a href="mailto:hello@staffpro.demo" className="font-medium hover:text-primary transition-colors">hello@staffpro.demo</a>
         </div>
-        
-        <div className="flex flex-col items-center text-center p-6 bg-muted/20 rounded-2xl">
-          <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-            <MapPin className="h-6 w-6" />
-          </div>
-          <h3 className="font-semibold text-lg mb-2">Office</h3>
-          <p className="text-muted-foreground mb-4">Come say hello at our HQ.</p>
-          <address className="not-italic font-medium">100 Business Pkwy, Suite 100<br/>New York, NY 10001</address>
+      </section>
+
+      {/* Bottom office info */}
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gray-500 text-sm max-w-lg mx-auto">
+            StaffPro is headquartered in New York City with regional coordinators in Los Angeles, Chicago, Dallas, Miami, and Atlanta — serving clients across all 48 continental states.
+          </p>
         </div>
-      </div>
-      
-      <div className="bg-primary/5 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold mb-4">Need staff immediately?</h2>
-        <p className="text-muted-foreground mb-8">Skip the general inquiry and go straight to our staffing request form for the fastest response time.</p>
-        <Button size="lg" asChild>
-          <a href="/request-staff">Fill out a Staffing Request</a>
-        </Button>
-      </div>
+      </section>
     </div>
   );
 }
