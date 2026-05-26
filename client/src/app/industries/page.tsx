@@ -64,7 +64,7 @@ const industries = [
     roles: ['Gala Dinner Servers', 'Silent Auction & Bidding Staff', 'Donor Registration Hosts', 'Valet Parking Staff', 'Paddle Raise Coordinators', 'Post-Event Teardown Crew'],
     scale: 'Typical crew: 5 – 80 staff',
     note: 'Formal or smart-casual dress codes accommodated',
-    image: 'https://images.unsplash.com/photo-1519167758481-83f19106d718?q=80&w=1600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1600&auto=format&fit=crop',
   },
 ];
 
