@@ -7,9 +7,9 @@ import { Menu, X, User } from 'lucide-react';
 
 const navLinks = [
   { label: 'Find Jobs', href: '/#find-jobs' },
+  { label: 'Our Services', href: '/services' },
+  { label: 'Industries', href: '/industries' },
   { label: 'Job Seekers', href: '/join-team' },
-  { label: 'Employers', href: '/services' },
-  { label: 'Specialties', href: '/industries' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
