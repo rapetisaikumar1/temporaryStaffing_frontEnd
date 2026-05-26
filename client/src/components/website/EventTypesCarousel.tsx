@@ -118,7 +118,7 @@ export default function EventTypesCarousel() {
               <Link
                 key={type.name}
                 href="/industries"
-                className="group relative shrink-0 w-72 h-72 rounded-lg overflow-hidden border border-gray-200 hover:border-[#0033a0] hover:shadow-xl transition-all"
+                className="group relative shrink-0 w-80 h-80 rounded-lg overflow-hidden border border-gray-200 hover:border-[#0033a0] hover:shadow-xl transition-all"
               >
                 <img
                   src={type.image}
