@@ -151,7 +151,7 @@ export default function AboutPage() {
             <div className="lg:w-1/2 grid grid-cols-3 gap-0.5 rounded-xl overflow-hidden">
               <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=500&auto=format&fit=crop" alt="Festival event" className="h-48 object-cover w-full col-span-2" />
               <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=300&auto=format&fit=crop" alt="Corporate event" className="h-48 object-cover w-full" />
-              <img src="https://images.unsplash.com/photo-1559883584-3c582531cd80?q=80&w=300&auto=format&fit=crop" alt="Bartender" className="h-48 object-cover w-full" />
+              <img src="https://images.unsplash.com/photo-1470338745628-171cf53de3a8?q=80&w=300&auto=format&fit=crop" alt="Bartender" className="h-48 object-cover w-full" />
               <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=500&auto=format&fit=crop" alt="Gala event" className="h-48 object-cover w-full col-span-2" />
             </div>
           </div>
@@ -159,22 +159,28 @@ export default function AboutPage() {
       </section>
 
       {/* Why Different */}
-      <section className="bg-[#0d2b5e] text-white py-20">
+      <section className="py-20 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Why StaffPro is different</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">Not all staffing agencies are created equal. Here's what sets us apart in the event staffing market.</p>
+          <div className="text-center mb-16">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#0033a0] mb-3">Our Difference</div>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0d2b5e] mb-4">Why StaffPro is different</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-base">Not all staffing agencies are created equal. Here's what sets us apart in the event staffing market.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: Star, title: 'Event-Specific Expertise', body: 'We don\'t staff office jobs and factories on the side. Events are all we do — which means our vetting criteria, our training programs, and our talent pools are built specifically around event roles and environments.' },
-              { icon: Calendar, title: '24/7 Operations Center', body: 'Emergencies don\'t respect business hours. Our operations team is available around the clock for last-minute bookings, no-show replacements, and real-time event-day communication. We pick up the phone.' },
-              { icon: Award, title: 'W-2 Only Workforce', body: 'Every worker we deploy is a StaffPro W-2 employee. That means we cover payroll taxes, worker\'s comp, unemployment insurance, and general liability — removing your exposure and making us the safer, more compliant choice.' },
-            ].map(({ icon: Icon, title, body }) => (
-              <div key={title} className="bg-white/10 rounded-lg p-8 border border-white/20">
-                <Icon className="h-8 w-8 text-blue-300 mb-5" />
-                <h3 className="font-bold text-white text-lg mb-3">{title}</h3>
-                <p className="text-blue-100 text-sm leading-relaxed">{body}</p>
+              { icon: Star, num: '01', title: 'Event-Specific Expertise', body: 'We don\'t staff office jobs and factories on the side. Events are all we do — which means our vetting criteria, our training programs, and our talent pools are built specifically around event roles and environments.' },
+              { icon: Calendar, num: '02', title: '24/7 Operations Center', body: 'Emergencies don\'t respect business hours. Our operations team is available around the clock for last-minute bookings, no-show replacements, and real-time event-day communication. We pick up the phone.' },
+              { icon: Award, num: '03', title: 'W-2 Only Workforce', body: 'Every worker we deploy is a StaffPro W-2 employee. That means we cover payroll taxes, worker\'s comp, unemployment insurance, and general liability — removing your exposure and making us the safer, more compliant choice.' },
+            ].map(({ icon: Icon, num, title, body }) => (
+              <div key={title} className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md hover:border-[#0033a0] transition-all group">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="h-14 w-14 rounded-xl bg-[#0033a0] flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <Icon className="h-7 w-7 text-white" />
+                  </div>
+                  <span className="text-4xl font-extrabold text-gray-100 select-none">{num}</span>
+                </div>
+                <h3 className="font-bold text-[#0d2b5e] text-xl mb-3">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{body}</p>
               </div>
             ))}
           </div>

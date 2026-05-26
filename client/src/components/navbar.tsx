@@ -19,9 +19,9 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-gray-600">
-            <Link href="/join-team" className="hover:text-[#0033a0] transition-colors">Find Event Gigs</Link>
-            <Link href="/services" className="hover:text-[#0033a0] transition-colors">Hire Event Staff</Link>
-            <Link href="/industries" className="hover:text-[#0033a0] transition-colors">Event Types</Link>
+            <Link href="/join-team" className="hover:text-[#0033a0] transition-colors">Job Seekers</Link>
+            <Link href="/services" className="hover:text-[#0033a0] transition-colors">Employers</Link>
+            <Link href="/industries" className="hover:text-[#0033a0] transition-colors">Specialties</Link>
             <Link href="/about" className="hover:text-[#0033a0] transition-colors">About Us</Link>
             <Link href="/contact" className="hover:text-[#0033a0] transition-colors">Contact</Link>
           </nav>
@@ -29,7 +29,7 @@ export function Navbar() {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-4 shrink-0">
             <Link
-              href="/join-team"
+              href="/login"
               className="text-[15px] font-semibold text-[#0033a0] hover:text-[#0d2b5e] flex items-center gap-1.5 transition-colors"
             >
               <User className="h-4 w-4" /> Log In
@@ -58,15 +58,15 @@ export function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100">
           <nav className="flex flex-col p-4 space-y-4 text-base font-semibold text-gray-700">
-            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Find Event Gigs</Link>
-            <Link href="/services" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Hire Event Staff</Link>
-            <Link href="/industries" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Event Types</Link>
+            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Job Seekers</Link>
+            <Link href="/services" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Employers</Link>
+            <Link href="/industries" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Specialties</Link>
             <Link href="/about" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">About Us</Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="hover:text-[#0033a0]">Contact</Link>
             
             <hr className="border-gray-100 my-2" />
             
-            <Link href="/join-team" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 text-[#0033a0]">
+            <Link href="/login" onClick={() => setMobileOpen(false)} className="flex items-center gap-2 text-[#0033a0]">
               <User className="h-5 w-5" /> Log In
             </Link>
             <Link href="/request-staff" onClick={() => setMobileOpen(false)} className="bg-[#0033a0] text-white text-center rounded px-4 py-3">

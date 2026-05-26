@@ -65,7 +65,7 @@ export default function Home() {
                 <Input type="text" placeholder="City, state, or zip code" className="pl-11 h-13 text-base rounded-sm border-gray-300" />
               </div>
               <Button size="lg" className="bg-[#0033a0] hover:bg-[#002277] text-white font-bold rounded-sm w-full md:w-auto px-8 whitespace-nowrap">
-                Find Gigs
+                Find Jobs
               </Button>
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm font-semibold border-t border-gray-200 pt-5">
@@ -180,7 +180,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-              <img src="https://images.unsplash.com/photo-1559883584-3c582531cd80?q=80&w=900&auto=format&fit=crop" alt="Bartender at event" className="rounded shadow-lg h-64 object-cover w-full" />
+              <img src="https://images.unsplash.com/photo-1470338745628-171cf53de3a8?q=80&w=900&auto=format&fit=crop" alt="Bartender at event" className="rounded shadow-lg h-64 object-cover w-full" />
               <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=900&auto=format&fit=crop" alt="Event setup crew" className="rounded shadow-lg h-64 object-cover w-full mt-8" />
               <img src="https://images.unsplash.com/photo-1549451371-64aa98a6f660?q=80&w=900&auto=format&fit=crop" alt="Brand ambassadors" className="rounded shadow-lg h-64 object-cover w-full -mt-8" />
               <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=900&auto=format&fit=crop" alt="Event team" className="rounded shadow-lg h-64 object-cover w-full" />
