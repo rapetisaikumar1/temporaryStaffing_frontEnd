@@ -199,7 +199,7 @@ export default function Home() {
               <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#0033a0] shrink-0" /> Free skills & compliance training</li>
             </ul>
             <Link href="/join-team" className="bg-[#0033a0] text-white font-bold text-base px-8 py-3 rounded-sm hover:bg-[#002277] transition-colors w-full sm:w-auto inline-block">
-              Browse Open Jobs
+              Job Seeker
             </Link>
           </div>
         </div>
